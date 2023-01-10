@@ -1,0 +1,25 @@
+.book_card{
+    display: flex;
+    border: 2px solid black;
+    margin-top: 20px;
+    margin-right: 300px;
+    margin-left: 300px;
+    padding: 40px;
+    box-shadow: 10px 10px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.info{
+    margin-left: 160px;
+}
+.info button{
+    padding: 10px;
+    border-radius: 10px;
+    color: blue;
+    margin-left: 10px;
+}
+.booklist h1{
+    margin-left: 650px;
+ 
+}

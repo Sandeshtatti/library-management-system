@@ -1,0 +1,27 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  rgb(215, 222, 228);
+   
+    /* text-shadow: 8px 8px 10px; */
+}
+
+.links li{
+    display: inline;
+    align-items: center;
+    margin-left: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    text-shadow: 8px 8px 10px;
+}
+.links a{
+    text-decoration: none;
+    color: black;
+}
+.navbar button{
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    color: blue;
+}
