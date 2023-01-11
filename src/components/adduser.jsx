@@ -1,3 +1,4 @@
+import '../styles/adduser.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const AddUser = () => {
@@ -26,18 +27,18 @@ const AddUser = () => {
             <h1>Add a New User</h1>
             <div className="form3">
                 <form action="" onSubmit={handleSubmit}>
-                    <div className="">
+                    <div className="fm1">
                         <input type="text" value={name} onChange={(e) => setname(e.target.value)} placeholder="enter name  user" />
-                    </div>
-                    <div className="">
+                    </div> <br />
+                    <div className="fm2">
                         <input type="number" value={age} onChange={(e) => setage(e.target.value)} min='1' placeholder="enter number  user" />
-                    </div>
-                    <div className="">
+                    </div> <br />
+                    <div className="fm3">
                         <input type="email" value={email} onChange={(e) => setemail(e.target.value)} placeholder="enter email  user" />
-                    </div>
-                    <div className="">
+                    </div> <br />
+                    <div className="fm4">
                         <input type="tel" value={phoneNumber} onChange={(e) => setphoneNumber(e.target.value)} minLength='10' maxLength='10' placeholder="enter number user" />
-                    </div>
+                    </div> <br />
                     <button>Add User</button>
                 </form>
             </div>

@@ -1,3 +1,4 @@
+import '../styles/addbook.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const AddBook = () => {
@@ -33,25 +34,25 @@ const AddBook = () => {
                 <form onSubmit={handlesubmit} action="">
                     <div className="title">
                         <input value={title} onChange={(e) => settitle(e.target.value)} type="text" required placeholder="title of the book" />
-                    </div>
+                    </div> <br />
                     <div className="authors">
                         <input value={authors} onChange={(e) => setauthors(e.target.value)} type="text" required placeholder="authors  of the book" />
-                    </div>
+                    </div> <br />
                     <div className="categories">
                         <input value={categories} onChange={(e) => setcategories(e.target.value)} type="text" required placeholder="categories  of the book" />
-                    </div>
+                    </div> <br />
                     <div className="pageCount">
                         <input value={pageCount} onChange={(e) => setpageCount(e.target.value)} type="number" required placeholder="pageCount  of the book" />
-                    </div>
+                    </div> <br />
                     <div className="shortDescription">
                         <textarea value={short} onChange={(e) => setshort(e.target.value)} name="" id="" cols="30" rows="10" placeholder="shortDescription of the book"></textarea>
-                    </div>
+                    </div> <br />
                     <div className="longDescription">
                         <textarea value={long} onChange={(e) => setlong(e.target.value)} name="" id="" cols="30" rows="10" placeholder="longDescription of the book"></textarea>
-                    </div>
+                    </div> <br />
                     <div className="thumbnailUrl">
                         <input value={thumbnailUrl} onChange={(e) => setthumbnailUrl(e.target.value)} type="text" required placeholder="thumbnailUrl  of the book" />
-                    </div>
+                    </div> <br />
                     <button>Add Book</button>
                 </form>
             </div>

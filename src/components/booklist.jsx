@@ -1,9 +1,12 @@
 import '../styles/booklist.css'
 import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 const BookList = () => {
   let [book, setbook] = useState([])
   let navigate = useNavigate()
+  // to fetch the route values
+  let location = useLocation()
+
   useEffect(() => {
     let fetchdata = async () => {
       let responce = await fetch('http://localhost:4000/books')
@@ -14,15 +17,20 @@ const BookList = () => {
   }, [book])
   //delete a book from server
   let handleremove = (id, title) => {
-       fetch(`http://localhost:4000/books/${id}`,{
-        method:'DELETE'
-       })
-       alert(`${title} Will be deleted permently`)   
+    fetch(`http://localhost:4000/books/${id}`, {
+      method: 'DELETE'
+    })
+    alert(`${title} Will be deleted permently`)
   }
-    let  readmore =(id)=>{
-     navigate(`/admin/book-list/${id}`)
-
+  let readmore = (id) => {
+    if (location.pathname == '/admin/book-list') {
+      navigate(`/admin/book-list/${id}`)
     }
+    else {
+      navigate(`/user/book-list/${id}`)
+    }
+
+  }
   return (
     <div className="booklist">
       <h1>Book List:{book.length}</h1>
@@ -42,7 +50,8 @@ const BookList = () => {
                 <h5>PageCt:{abs.pageCount}</h5>
                 <h5>Category:{abs.categories}</h5>
                 <button onClick={() => readmore(abs.id)}  >Read more</button>
-                <button onClick={() => handleremove(abs.id, abs.title)}>Delete</button>
+                {location.pathname == '/admin/book-list' && <button onClick={() => handleremove(abs.id, abs.title)}>Delete</button>}
+
               </div>
 
             </div>
